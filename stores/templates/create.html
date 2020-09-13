@@ -1,0 +1,21 @@
+{% load crispy_forms_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+  <h5 class="card-header">Create Restaurant</h5>
+  <div class="card-body">
+    <p class="card-text">
+        <form action="{% url 'create' %}" method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" value="Create" class="btn btn-outline-success">
+        </form>
+  </div>
+</div>
+</body>
+</html>
